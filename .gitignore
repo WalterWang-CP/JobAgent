@@ -1,0 +1,44 @@
+# Python environments
+.venv/
+venv/
+
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Local application data, uploads, and databases
+/data/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Generated packages and archives
+/build/
+/dist/
+*.egg-info/
+*.zip
+
+# Logs
+*.log
+
+# Operating system files
+Thumbs.db
+Desktop.ini
+.DS_Store
