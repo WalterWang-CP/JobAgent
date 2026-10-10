@@ -1,8 +1,8 @@
-\# JobAgent requirements
+# JobAgent requirements
 
 
 
-\## Purpose
+## Purpose
 
 
 
@@ -16,11 +16,11 @@ The system recommends and explains jobs. It does not submit applications.
 
 
 
-\## First-release requirements
+## First-release requirements
 
 
 
-\### FR-01: Collect job postings
+### FR-01: Collect job postings
 
 
 
@@ -36,15 +36,15 @@ Live connectors must use documented APIs and valid access.
 
 Verification:
 
-\- A configured source produces stored jobs.
+- A configured source produces stored jobs.
 
-\- A source failure is recorded without erasing previously collected jobs.
+- A source failure is recorded without erasing previously collected jobs.
 
-\- Fixture tests and live checks are identified separately.
+- Fixture tests and live checks are identified separately.
 
 
 
-\### FR-02: Normalize and preserve source information
+### FR-02: Normalize and preserve source information
 
 
 
@@ -66,13 +66,13 @@ presented as original publication dates.
 
 Verification:
 
-\- Different provider responses produce consistent internal records.
+- Different provider responses produce consistent internal records.
 
-\- Unknown salary, location, or publication dates remain identifiable.
+- Unknown salary, location, or publication dates remain identifiable.
 
 
 
-\### FR-03: Deduplicate and refresh postings
+### FR-03: Deduplicate and refresh postings
 
 
 
@@ -94,15 +94,15 @@ first-seen timestamp, application state, and user notes.
 
 Verification:
 
-\- Repeating an unchanged posting does not create another canonical job.
+- Repeating an unchanged posting does not create another canonical job.
 
-\- Multiple source appearances remain available.
+- Multiple source appearances remain available.
 
-\- Changed or removed posting information updates correctly.
+- Changed or removed posting information updates correctly.
 
 
 
-\### FR-04: Process resumes
+### FR-04: Process resumes
 
 
 
@@ -122,17 +122,17 @@ Store profile versions and identify the active version.
 
 Verification:
 
-\- Supported documents produce extracted text.
+- Supported documents produce extracted text.
 
-\- Corrupt, oversized, unsupported, or empty documents receive clear errors.
+- Corrupt, oversized, unsupported, or empty documents receive clear errors.
 
-\- Profile edits persist without inventing qualifications.
+- Profile edits persist without inventing qualifications.
 
-\- Scanned documents disclose that OCR is required.
+- Scanned documents disclose that OCR is required.
 
 
 
-\### FR-05: Store preferences and enforce hard requirements
+### FR-05: Store preferences and enforce hard requirements
 
 
 
@@ -156,15 +156,15 @@ conversions or convert hourly and annual pay without an explicit policy.
 
 Verification:
 
-\- Each rejection or uncertainty has a readable reason.
+- Each rejection or uncertainty has a readable reason.
 
-\- An AI recommendation cannot override a mandatory failure.
+- An AI recommendation cannot override a mandatory failure.
 
-\- Saved preferences survive restart.
+- Saved preferences survive restart.
 
 
 
-\### FR-06: Explain skill gaps
+### FR-06: Explain skill gaps
 
 
 
@@ -182,15 +182,15 @@ claiming that a related skill proves an exact qualification.
 
 Verification:
 
-\- Controlled examples produce the expected matched and missing sets.
+- Controlled examples produce the expected matched and missing sets.
 
-\- Preferred skills do not become required skills.
+- Preferred skills do not become required skills.
 
-\- Empty or unknown requirements have an explicit interpretation.
+- Empty or unknown requirements have an explicit interpretation.
 
 
 
-\### FR-07: Validate AI analysis
+### FR-07: Validate AI analysis
 
 
 
@@ -208,15 +208,15 @@ and disclose failed or unavailable analysis.
 
 Verification:
 
-\- Invalid or incomplete AI output is rejected.
+- Invalid or incomplete AI output is rejected.
 
-\- Failed analysis does not discard a discovered job.
+- Failed analysis does not discard a discovered job.
 
-\- Rules output is not presented as completed AI inference.
+- Rules output is not presented as completed AI inference.
 
 
 
-\### FR-08: Calculate reproducible match scores
+### FR-08: Calculate reproducible match scores
 
 
 
@@ -224,17 +224,17 @@ Code calculates the final score from these components:
 
 
 
-\- Hard requirement component: 25%.
+- Hard requirement component: 25%.
 
-\- Required skill coverage: 25%.
+- Required skill coverage: 25%.
 
-\- Semantic fit: 20%.
+- Semantic fit: 20%.
 
-\- Seniority fit: 15%.
+- Seniority fit: 15%.
 
-\- Role and company preferences: 10%.
+- Role and company preferences: 10%.
 
-\- Freshness: 5%.
+- Freshness: 5%.
 
 
 
@@ -250,15 +250,15 @@ posting content used.
 
 Verification:
 
-\- A controlled score can be calculated independently.
+- A controlled score can be calculated independently.
 
-\- Changed inputs make obsolete results distinguishable from current results.
+- Changed inputs make obsolete results distinguishable from current results.
 
-\- Failed reanalysis does not expose an old score as a current recommendation.
+- Failed reanalysis does not expose an old score as a current recommendation.
 
 
 
-\### FR-09: Track applications and feedback
+### FR-09: Track applications and feedback
 
 
 
@@ -276,13 +276,13 @@ application progress.
 
 Verification:
 
-\- Status, notes, and feedback survive restart and posting refreshes.
+- Status, notes, and feedback survive restart and posting refreshes.
 
-\- Applying to a job is an explicit user action outside JobAgent.
+- Applying to a job is an explicit user action outside JobAgent.
 
 
 
-\### FR-10: Record and deliver notifications
+### FR-10: Record and deliver notifications
 
 
 
@@ -292,11 +292,11 @@ Create notification records only for current, eligible matches.
 
 Default routing:
 
-\- Scores of 90 or above: immediate notification.
+- Scores of 90 or above: immediate notification.
 
-\- Scores from 75 to below 90: daily digest.
+- Scores from 75 to below 90: daily digest.
 
-\- Scores below 75: store without notification.
+- Scores below 75: store without notification.
 
 
 
@@ -306,15 +306,15 @@ Support explicit SMTP testing, delivery outcomes, and failure records.
 
 Verification:
 
-\- Repeated processing does not create duplicate queue entries.
+- Repeated processing does not create duplicate queue entries.
 
-\- Applied, closed, ineligible, or obsolete matches do not produce alerts.
+- Applied, closed, ineligible, or obsolete matches do not produce alerts.
 
-\- Controlled email tests and actual inbox delivery are reported separately.
+- Controlled email tests and actual inbox delivery are reported separately.
 
 
 
-\### FR-11: Monitor configured sources
+### FR-11: Monitor configured sources
 
 
 
@@ -330,17 +330,17 @@ The first release runs one application process.
 
 Verification:
 
-\- Due sources run according to their configuration.
+- Due sources run according to their configuration.
 
-\- Overlapping polls are prevented within the process.
+- Overlapping polls are prevented within the process.
 
-\- Monitoring stops cleanly when the application shuts down.
+- Monitoring stops cleanly when the application shuts down.
 
-\- A missing posting in one response is not automatically treated as closed.
+- A missing posting in one response is not automatically treated as closed.
 
 
 
-\### FR-12: Provide analytics
+### FR-12: Provide analytics
 
 
 
@@ -358,19 +358,19 @@ Provide CSV export.
 
 Verification:
 
-\- Reports agree with independently counted test data.
+- Reports agree with independently counted test data.
 
-\- Repeated scans do not inflate job or skill counts.
+- Repeated scans do not inflate job or skill counts.
 
-\- Trends show sample sizes and disclose that different job samples affect
+- Trends show sample sizes and disclose that different job samples affect
 
 &#x20; comparisons.
 
-\- CSV output handles spreadsheet formula-like values safely.
+- CSV output handles spreadsheet formula-like values safely.
 
 
 
-\### FR-13: Provide a usable website
+### FR-13: Provide a usable website
 
 
 
@@ -386,17 +386,17 @@ Provide loading, empty, validation-error, and failure states.
 
 Verification:
 
-\- Visible controls perform their advertised actions.
+- Visible controls perform their advertised actions.
 
-\- Main workflows are exercised in a real browser.
+- Main workflows are exercised in a real browser.
 
-\- The interface remains usable at desktop and narrow screen widths.
+- The interface remains usable at desktop and narrow screen widths.
 
-\- Untrusted posting text cannot execute as unrestricted HTML.
+- Untrusted posting text cannot execute as unrestricted HTML.
 
 
 
-\### FR-14: Provide a reproducible release
+### FR-14: Provide a reproducible release
 
 
 
@@ -414,31 +414,31 @@ Git.
 
 Verification:
 
-\- A clean clone runs using the documented instructions.
+- A clean clone runs using the documented instructions.
 
-\- Jobs and user state survive restart.
+- Jobs and user state survive restart.
 
-\- Backups are verified on an isolated copy.
+- Backups are verified on an isolated copy.
 
-\- GitHub Actions pass for the release commit.
+- GitHub Actions pass for the release commit.
 
-\- Documentation distinguishes completed, unverified, and deferred work.
-
-
-
-\## Deferred enhancements
+- Documentation distinguishes completed, unverified, and deferred work.
 
 
 
-\- Additional ATS connectors.
+## Deferred enhancements
 
-\- Supported ATS posting-URL previews.
 
-\- Profile restore and upload reanalysis controls.
 
-\- Private runtime credential editing through the website.
+- Additional ATS connectors.
 
-\- Advanced discovery filters and historical drill-down controls.
+- Supported ATS posting-URL previews.
+
+- Profile restore and upload reanalysis controls.
+
+- Private runtime credential editing through the website.
+
+- Advanced discovery filters and historical drill-down controls.
 
 
 
@@ -446,19 +446,19 @@ These enhancements have a separate implementation schedule.
 
 
 
-\## Release evidence
+## Release evidence
 
 
 
 Each requirement will receive:
 
-\- The implementation commit or pull request.
+- The implementation commit or pull request.
 
-\- Automated checks actually performed.
+- Automated checks actually performed.
 
-\- Manual checks actually performed.
+- Manual checks actually performed.
 
-\- Separate live integration results where applicable.
+- Separate live integration results where applicable.
 
-\- Any remaining limitation or blocker.
+- Any remaining limitation or blocker.
 

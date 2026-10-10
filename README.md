@@ -1,4 +1,4 @@
-\# JobAgent
+# JobAgent
 
 
 
@@ -10,7 +10,7 @@ applications.
 
 
 
-\## Project status
+## Project status
 
 
 
@@ -28,35 +28,35 @@ verified when the first working application is implemented.
 
 
 
-\## Planned functionality
+## Planned functionality
 
 
 
-\- Collect jobs from supported APIs and company job boards.
+- Collect jobs from supported APIs and company job boards.
 
-\- Normalize postings and preserve their source information.
+- Normalize postings and preserve their source information.
 
-\- Detect duplicates and refresh changed postings.
+- Detect duplicates and refresh changed postings.
 
-\- Extract text from PDF and DOCX resumes.
+- Extract text from PDF and DOCX resumes.
 
-\- Store reviewed, structured resume profiles.
+- Store reviewed, structured resume profiles.
 
-\- Apply location, work arrangement, salary, and seniority preferences.
+- Apply location, work arrangement, salary, and seniority preferences.
 
-\- Explain required skills, missing skills, and match scores.
+- Explain required skills, missing skills, and match scores.
 
-\- Track applications, notes, and recommendation feedback.
+- Track applications, notes, and recommendation feedback.
 
-\- Record or send notifications for eligible matches.
+- Record or send notifications for eligible matches.
 
-\- Report market skill demand and resume skill gaps.
+- Report market skill demand and resume skill gaps.
 
-\- Provide a responsive website for the main workflows.
+- Provide a responsive website for the main workflows.
 
 
 
-\## AI and deterministic code
+## AI and deterministic code
 
 
 
@@ -80,25 +80,25 @@ An explicit rules mode and synthetic data will support an offline demo.
 
 
 
-\## Planned technology
+## Planned technology
 
 
 
-\- Python 3.13
+- Python 3.13
 
-\- FastAPI
+- FastAPI
 
-\- SQLAlchemy and SQLite
+- SQLAlchemy and SQLite
 
-\- Alembic database migrations
+- Alembic database migrations
 
-\- HTML, CSS, and JavaScript
+- HTML, CSS, and JavaScript
 
-\- pytest and Ruff
+- pytest and Ruff
 
-\- Docker Compose
+- Docker Compose
 
-\- GitHub Actions
+- GitHub Actions
 
 
 
@@ -106,7 +106,7 @@ Dependencies will be introduced as their features are implemented.
 
 
 
-\## Scope
+## Scope
 
 
 
@@ -126,7 +126,7 @@ training are outside the first release.
 
 
 
-\## Development approach
+## Development approach
 
 
 
@@ -142,5 +142,5 @@ responses or synthetic data.
 
 
 
-Detailed requirements are available in \[docs/requirements.md](docs/requirements.md).
+Detailed requirements are available in [docs/requirements.md](docs/requirements.md).
 
